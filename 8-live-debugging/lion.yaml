@@ -13,7 +13,7 @@ metadata:
 ---
 
 apiVersion: apps/v1
-kind: Deployemnt
+kind: Deployment
 metadata:
   name: bigapp
   namespace: bigpods
@@ -37,7 +37,7 @@ spec:
 ---
 
 apiVersion: apps/v1
-kind: Deployemnt
+kind: Deployment
 metadata:
   name: job
 spec:
@@ -70,7 +70,7 @@ spec:
 ---
 
 apiVersion: apps/v1
-kind: Deployemnt
+kind: Deployment
 metadata:
   name: working
   namespace: working
@@ -101,7 +101,7 @@ spec:
 ---
 
 apiVersion: apps/v1
-kind: Deployemnt
+kind: Deployment
 metadata:
   name: working1
   namespace: working
