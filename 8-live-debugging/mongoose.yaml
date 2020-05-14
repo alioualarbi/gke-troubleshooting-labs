@@ -51,7 +51,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: generic-workload
-  label:
+  labels:
     app: generic
 spec:
   replicas: 4
@@ -63,17 +63,18 @@ spec:
       labels:
         app: generic
     spec:
-      podAntiAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 75
-          podAffinityTerm:
-            labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - generic
-          topologyKey: kubernetes.io/hostname
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 75
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - generic
+            topologyKey: kubernetes.io/hostname
       containers: 
       - name: generic-app
         image: nginx:alpine
