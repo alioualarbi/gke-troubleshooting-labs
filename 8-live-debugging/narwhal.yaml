@@ -79,6 +79,7 @@ kind: StatefulSet
 metadata:
   name: the-fab-four
 spec:
+  serviceName: the-fab-four-svc
   podManagementPolicy: Parallel
   replicas: 4
   selector:
